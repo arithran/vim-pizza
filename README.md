@@ -1,5 +1,5 @@
 ## Description
-My initial attempt in trying to order pizza from within vim. 
+My initial attempt at trying to order pizza from within vim. 
 
 ## But Why?
 After a long day's work of coding, you feel exhausted and all you want to do is eat pizza. But since you are a VIM user you wish that you had a key-binding within VIM to open your computer browser, point it at your favourite pizza and make an order. 
