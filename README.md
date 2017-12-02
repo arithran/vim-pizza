@@ -10,8 +10,14 @@ developing this plug-in).
 ## Usage
 	:OrderPizza
 
-#### If you are always hungry, add the following to your .vimrc to bind a key like F5 
+**If you are always hungry, add the following to your .vimrc to bind a key like F5**
 	nnoremap <F5> :OrderPizza<CR>
+
+** I always order Papa John's Pan Cheese, but this plug-in always takes me to the
+Pizza Hut homepage **
+(It can be any pizza URL you visit frequently)
+	let g:vim_pizza_url ='https://www.papajohns.com/order/builder/productBuilderInfo?productGroupId=pan-cheese&productSKU.sku=1-296-3-83&quantity=1'
+
 
 ## Installation
 
