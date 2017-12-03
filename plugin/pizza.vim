@@ -18,6 +18,8 @@ if !exists("*OrderPizza")
 			exe "silent !gnome-open ".args
 		elseif has("unix") && executable("kde-open") && haskdeinit
 			exe "silent !kde-open ".args
+		elseif has("unix") && executable("kde-open5") && haskdeinit5
+			exe "silent !kde-open5 ".args
 		elseif has("unix") && executable("open") && hasdarwin
 			exe "silent !open ".args
 		elseif has("win32") || has("win64")
