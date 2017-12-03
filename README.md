@@ -32,7 +32,9 @@ This plugin follows the standard runtime path structure, and as such it can be i
 
 ## Want to collaborate?
 I would like to create menus within VIM and integrate the plug-in with 3rd party APIs in the near future. Help is appreciated, PM me.
+Head over to [#vim-pizza][15] for hugs or bugs. 
 
 [12]: https://github.com/Shougo/neobundle.vim
 [13]: https://github.com/gmarik/vundle
 [40]: https://github.com/junegunn/vim-plug
+[15]: http://webchat.freenode.net/?channels=vim-pizza
