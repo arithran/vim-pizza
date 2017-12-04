@@ -11,7 +11,7 @@ I stumbeled on arithran's idea and thought it was funny so here's my take on it.
 
 	nnoremap <F5> :PyPizz<CR>
 
-**I always order Papa John's Pan Cheese, but this plug-in always takes me to the Pizza Hut homepage** (It can be any pizza URL you visit frequently)
+**Arithran always order Papa John's Pan Cheese, but this plug-in always takes me to the Pizza Hut homepage** (It can be any pizza URL you visit frequently)
 
 	let g:vim_pizza_url ='https://www.papajohns.com/order/builder/productBuilderInfo?productGroupId=pan-cheese&productSKU.sku=1-296-3-83&quantity=1'
 
