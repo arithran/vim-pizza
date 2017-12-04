@@ -1,5 +1,5 @@
 ## Description
-My initial attempt at trying to order pizza from within vim. 
+A python version of arithran's initial attempt at trying to order pizza from within vim. 
 
 ## But Why?
 After a long day's work of coding, you feel exhausted and all you want to do is eat pizza. But since you are a VIM user you wish that you had a key-binding within VIM to open your computer browser, point it at your favourite pizza and make an order. 
@@ -8,11 +8,11 @@ Also, you can brag about VIM ordering pizza at work(real reason for
 developing this plug-in).
 
 ## Usage
-	:OrderPizza
+	:PyPizz
 
 **If you are always hungry, add the following to your .vimrc to bind a key like F5**
 
-	nnoremap <F5> :OrderPizza<CR>
+	nnoremap <F5> :PyPizz<CR>
 
 **I always order Papa John's Pan Cheese, but this plug-in always takes me to the Pizza Hut homepage** (It can be any pizza URL you visit frequently)
 
@@ -29,7 +29,7 @@ This plugin follows the standard runtime path structure, and as such it can be i
 | [Vundle][13] | `Plugin 'arithran/vim-pizza'` |
 | [Plug][40] | `Plug 'arithran/vim-pizza'` |
 | manual | copy all of the files into your `~/.vim` directory |
-
+* Please take note that this version of the script requires a python interpreter
 ## Want to collaborate?
 I would like to create menus within VIM and integrate the plug-in with 3rd party APIs in the near future. Help is appreciated, PM me.
 Head over to [#vim-pizza][15] for hugs or bugs. 
