@@ -2,10 +2,7 @@
 A python version of arithran's initial attempt at trying to order pizza from within vim. 
 
 ## But Why?
-After a long day's work of coding, you feel exhausted and all you want to do is eat pizza. But since you are a VIM user you wish that you had a key-binding within VIM to open your computer browser, point it at your favourite pizza and make an order. 
-
-Also, you can brag about VIM ordering pizza at work(real reason for
-developing this plug-in).
+I stumbeled on arithran's idea and thought it was funny so here's my take on it.
 
 ## Usage
 	:PyPizz
@@ -20,21 +17,6 @@ developing this plug-in).
 
 
 ## Installation
-
-This plugin follows the standard runtime path structure, and as such it can be installed with a variety of plugin managers:
-
-| Plugin Manager | Install with... |
-| ------------- | ------------- |
-| [NeoBundle][12] | `NeoBundle 'arithran/vim-pizza'` |
-| [Vundle][13] | `Plugin 'arithran/vim-pizza'` |
-| [Plug][40] | `Plug 'arithran/vim-pizza'` |
-| manual | copy all of the files into your `~/.vim` directory |
-* Please take note that this version of the script requires a python interpreter
+Just download the files and copy them into you `~/.vim` directory.
 ## Want to collaborate?
-I would like to create menus within VIM and integrate the plug-in with 3rd party APIs in the near future. Help is appreciated, PM me.
-Head over to [#vim-pizza][15] for hugs or bugs. 
-
-[12]: https://github.com/Shougo/neobundle.vim
-[13]: https://github.com/gmarik/vundle
-[40]: https://github.com/junegunn/vim-plug
-[15]: http://webchat.freenode.net/?channels=vim-pizza
+Do as you wish.
