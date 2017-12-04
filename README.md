@@ -19,4 +19,4 @@ I stumbeled on arithran's idea and thought it was funny so here's my take on it.
 ## Installation
 Just download the files and copy them into you `~/.vim` directory.
 ## Want to collaborate?
-Do as you wish.
+Do what ever you want with this.
