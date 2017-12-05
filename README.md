@@ -30,6 +30,9 @@ This plugin follows the standard runtime path structure, and as such it can be i
 | [Plug][40] | `Plug 'arithran/vim-pizza'` |
 | manual | copy all of the files into your `~/.vim` directory |
 
+## License
+Licensed under the [MIT License](LICENSE.txt).
+
 ## Want to collaborate?
 I would like to create menus within VIM and integrate the plug-in with 3rd party APIs in the near future. Help is appreciated, PM me.
 
