@@ -20,6 +20,8 @@ if !exists("*OrderPizza")
 			exe "silent !kde-open ".args
 		elseif has("unix") && executable("open") && hasdarwin
 			exe "silent !open ".args
+		elseif has("unix") && executable("xdg-open")
+			exe "silent !xdg-open ".args
 		elseif has("win32") || has("win64")
 			exe "silent !start explorer ".shellescape(g:vim_pizza_url,1)
 		end
