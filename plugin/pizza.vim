@@ -11,9 +11,18 @@ endif
 
 let s:DEFAULT_PIZZA_URL = "https://www.pizzahut.com"
 
-if !exists('g:pizza#url')
-	let g:pizza#url = s:DEFAULT_PIZZA_URL
+if !exists('g:pizza#default_url')
+	let g:pizza#defaul_url = s:DEFAULT_PIZZA_URL
 endif
+
+if !exists('g:pizza#pizzerias')
+	let g:pizza#pizzerias = { 'pizza hut'  : 'https://www.pizzahut.com',
+	                        \ 'ph'         : 'https://www.pizzahut.com',
+	                        \ 'papa johns' : 'https://www.papajohns.com',
+	                        \ 'pj'         : 'https://www.papajohns.com',
+	                        \ }
+endif
+
 
 function! OrderPizza() abort
 	let haskdeinit = system("ps -e") =~ 'kdeinit'

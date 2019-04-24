@@ -73,9 +73,9 @@ DEFAULT URL                                                *g:pizza#default_url*
 Type: |String|
 Default: `'https://www.pizzahut.com'`
 
-This specifies which URL the |:OrderPizza| command should visit by default.
-For example, if you always order Papa John's Pan Cheese, add the following to
-your |vimrc|: >
+This specifies which URL the |:OrderPizza| command should visit by default if
+no parameters are specified. For example, if you always order Papa John's Pan
+Cheese, add the following to your |vimrc|: >
 
 
         let g:vim_pizza_url ='https://www.papajohns.com/order/builder/
