@@ -68,19 +68,17 @@ the following to your |vimrc| to bind a key like |F5|: >
 ------------------------------------------------------------------------------
 2.3 Variables                                                  *pizza-variables*
 
-DEFAULT URL                                                *g:pizza#default_url*
+DEFAULT PIZZERIA                                           *g:pizza#default_pizzeria*
 
 Type: |String|
-Default: `'https://www.pizzahut.com'`
+Default: `'pizza hut'`
 
-This specifies which URL the |:OrderPizza| command should visit by default if
+This specifies which pizzeria the |:OrderPizza| command should visit by default if
 no parameters are specified. For example, if you always order Papa John's Pan
 Cheese, add the following to your |vimrc|: >
 
 
-        let g:vim_pizza_url ='https://www.papajohns.com/order/builder/
-                             \ productBuilderInfo?productGroupId=pan-
-                             \ cheese&productSKU.sku=1-296-3-83&quantity=1'
+        let g:pizza#default_pizzeria = 'papa johns pan cheese'
 <
 
 PIZZERIAS                                                  *g:pizza#urpizzerias*
