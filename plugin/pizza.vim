@@ -11,8 +11,8 @@ endif
 
 let s:DEFAULT_PIZZA_URL = "https://www.pizzahut.com"
 
-if !exists('g:vim_pizza_url')
-	let g:vim_pizza_url = s:DEFAULT_PIZZA_URL
+if !exists('g:pizza#url')
+	let g:pizza#url = s:DEFAULT_PIZZA_URL
 endif
 
 function! OrderPizza() abort
@@ -21,9 +21,9 @@ function! OrderPizza() abort
 
 
 	if has("gui_running")
-		let args = shellescape(g:vim_pizza_url,1)." &"
+		let args = shellescape(g:pizza#url,1)." &"
 	else
-		let args = shellescape(g:vim_pizza_url,1)." > /dev/null"
+		let args = shellescape(g:pizza#url,1)." > /dev/null"
 	end
 
 	if has("unix") && executable("gnome-open") && !haskdeinit
@@ -35,7 +35,7 @@ function! OrderPizza() abort
 	elseif has("unix") && executable("xdg-open")
 		exe "silent !xdg-open ".args
 	elseif has("win32") || has("win64")
-		exe "silent !start explorer ".shellescape(g:vim_pizza_url,1)
+		exe "silent !start explorer ".shellescape(g:pizza#url,1)
 	end
 	redraw!
 endfunction
