@@ -1,5 +1,6 @@
 " ============================================================================
-" Order pizza from within Vim.
+" vim-pizza: Order pizza from within Vim.
+"
 " Author:     Arithran Thurairetnam
 " Maintainer: https://github.com/arithran/vim-pizza
 " Version:    0.1.0
@@ -38,5 +39,7 @@ function! OrderPizza() abort
 endfunction
 
 command! OrderPizza call OrderPizza()
+
+nnoremap <silent> <Plug>(pizza#order) :call OrderPizza()<Return>
 
 let g:pizza#loaded = 1
