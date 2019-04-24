@@ -3,7 +3,7 @@
 "
 " Author:     Arithran Thurairetnam
 " Maintainer: https://github.com/arithran/vim-pizza
-" Version:    0.2.0
+" Version:    0.3.0
 " ============================================================================
 if exists("g:pizza#loaded")
 	finish
@@ -80,7 +80,5 @@ function! s:OpenURL(url) abort
 endfunction
 
 command! -nargs=* OrderPizza call OrderPizza(<q-args>)
-
-nnoremap <silent> <Plug>(pizza#order) :call OrderPizza()<Return>
 
 let g:pizza#loaded = 1

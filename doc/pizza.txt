@@ -20,8 +20,7 @@ CONTENTS                                                        *pizza-contents*
     1. Introduction.............................|pizza-introduction|
     2. Usage....................................|pizza-usage|
         2.1 Commands............................|pizza-commands|
-        2.2 Mappings............................|pizza-mappings|
-        2.3 Variables...........................|pizza-variables|
+        2.2 Variables...........................|pizza-variables|
 
 ==============================================================================
 1. Introduction                                             *pizza-introduction*
@@ -42,59 +41,61 @@ You can find the most updated version of the plugin from:
 ==============================================================================
 2. Usage                                                           *pizza-usage*
 
-There are two ways to order pizza through Vim: through a command or through
-a mapping:
-
 ------------------------------------------------------------------------------
 2.1 Commands                                                    *pizza-commands*
 
 :OrderPizza [args]                                                 *:OrderPizza*
 
 With no arguments, a browser page with open at the URL specified by
-|g:pizza#default_url|.
+|g:pizza#default_pizzeria|. By default, this is not bound to anything. If you
+are always hungry, add the following to your |vimrc| to bind a key like |F5|:
+>
 
-------------------------------------------------------------------------------
-2.2 Mappings                                                    *pizza-mappings*
-
-
-ORDER PIZZA                                                *<Plug>(pizza#order)*
-
-You can map a key to order pizza. For example, if you are always hungry, add
-the following to your |vimrc| to bind a key like |F5|: >
-
-        nnoremap <F5> <Plug>(pizza#order)
+        nnoremap <F5> :OrderPizza<CR>
 <
 
 ------------------------------------------------------------------------------
-2.3 Variables                                                  *pizza-variables*
+2.2 Variables                                                  *pizza-variables*
 
-DEFAULT PIZZERIA                                           *g:pizza#default_pizzeria*
+DEFAULT PIZZERIA                                      *g:pizza#default_pizzeria*
 
 Type: |String|
 Default: `'pizza hut'`
 
-This specifies which pizzeria the |:OrderPizza| command should visit by default if
-no parameters are specified. For example, if you always order Papa John's Pan
-Cheese, add the following to your |vimrc|: >
+This specifies which pizzeria the |:OrderPizza| command should visit by
+default if no parameters are specified. For example, if you always order Papa
+John's Pan Cheese, add the following to your |vimrc|: >
 
 
         let g:pizza#default_pizzeria = 'papa johns pan cheese'
 <
 
-PIZZERIAS                                                  *g:pizza#urpizzerias*
+PIZZERIAS                                                    *g:pizza#pizzerias*
 
-Type: |Dictionary|
-    Key: |String|
-    Value: |String|
-    Default: >
-            {
-              'pizza hut'       : 'https://www.pizzahut.com',
-              'ph'              : 'https://www.pizzahut.com',
-              'papa johns'      : 'https://www.papajohns.com',
-              'pj'              : 'https://www.papajohns.com',
-            }
+Type:  |Dictionary|
+Key:   |String|
+Value: |String|
+Default: >
+        {
+          'pizza hut'       : 'https://www.pizzahut.com',
+          'ph'              : 'https://www.pizzahut.com',
+          'papa johns'      : 'https://www.papajohns.com',
+          'pj'              : 'https://www.papajohns.com',
+          'papa johns pan cheese' : 'https://www.papajohns.com/
+                                   \ order/builder/productBuilderInfo?
+                                   \ productGroupId=pan-cheese&productSKU.sku
+                                   \ =1-296-3-83&quantity=1',
+          'dominos'         : 'https://www.dominos.com',
+        }
 <
 This specifies which pizzerias correspond to which URL.
+
+LOADED                                                          *g:pizza#loaded*
+
+Type: |Number|
+Default: `1`
+
+If the variable exists, then the plugin loaded successfully.
 
 ------------------------------------------------------------------------------
 vim:tw=78:ts=8:ft=help:noet:expandtab
