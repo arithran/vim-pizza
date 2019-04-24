@@ -1,3 +1,9 @@
+" ============================================================================
+" Order pizza from within Vim.
+" Author:     Arithran Thurairetnam
+" Maintainer: https://github.com/arithran/vim-pizza
+" Version:    0.1.0
+" ============================================================================
 if !exists("*OrderPizza")
 	function OrderPizza()
 		let haskdeinit = system("ps -e") =~ 'kdeinit'
