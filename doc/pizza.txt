@@ -1,0 +1,102 @@
+*pizza.txt*              For Vim version 8.1          Last change: 2019 April 23
+
+
+                  _   _ _            ______ _                                  ~
+                 | | | (_)           | ___ (_)                                 ~
+                 | | | |_ _ __ ___   | |_/ /_ __________ _                     ~
+                 | | | | | '_ ` _ \  |  __/| |_  /_  / _` |                    ~
+                 \ \_/ / | | | | | | | |   | |/ / / / (_| |                    ~
+                  \___/|_|_| |_| |_| \_|   |_/___/___\__,_|                    ~
+                                                                               ~
+                        Order pizza from within Vim.                           ~
+                                                                               ~
+
+                             Reference Manual                                  ~
+
+
+==============================================================================
+CONTENTS                                                        *pizza-contents*
+
+    1. Introduction.............................|pizza-introduction|
+    2. Usage....................................|pizza-usage|
+        2.1 Commands............................|pizza-commands|
+        2.2 Mappings............................|pizza-mappings|
+        2.3 Variables...........................|pizza-variables|
+
+==============================================================================
+1. Introduction                                             *pizza-introduction*
+
+After a long day's work of coding, you feel exhausted and all you want to do
+is eat pizza. But since you are a Vim user you wish that you had a key-binding
+within Vim to open your computer browser, point it at your favourite pizza and
+make an order.
+
+Also, you can brag about Vim ordering pizza at work (the real reason for
+developing this plug-in).
+
+You can find the most updated version of the plugin from:
+
+        https://github.com/arithran/vim-pizza
+
+
+==============================================================================
+2. Usage                                                           *pizza-usage*
+
+There are two ways to order pizza through Vim: through a command or through
+a mapping:
+
+------------------------------------------------------------------------------
+2.1 Commands                                                    *pizza-commands*
+
+:OrderPizza [args]                                                 *:OrderPizza*
+
+With no arguments, a browser page with open at the URL specified by
+|g:pizza#default_url|.
+
+------------------------------------------------------------------------------
+2.2 Mappings                                                    *pizza-mappings*
+
+
+ORDER PIZZA                                                *<Plug>(pizza#order)*
+
+You can map a key to order pizza. For example, if you are always hungry, add
+the following to your |vimrc| to bind a key like |F5|: >
+
+        nnoremap <F5> <Plug>(pizza#order)
+<
+
+------------------------------------------------------------------------------
+2.3 Variables                                                  *pizza-variables*
+
+DEFAULT URL                                                *g:pizza#default_url*
+
+Type: |String|
+Default: `'https://www.pizzahut.com'`
+
+This specifies which URL the |:OrderPizza| command should visit by default.
+For example, if you always order Papa John's Pan Cheese, add the following to
+your |vimrc|: >
+
+
+        let g:vim_pizza_url ='https://www.papajohns.com/order/builder/
+                             \ productBuilderInfo?productGroupId=pan-
+                             \ cheese&productSKU.sku=1-296-3-83&quantity=1'
+<
+
+PIZZERIAS                                                  *g:pizza#urpizzerias*
+
+Type: |Dictionary|
+    Key: |String|
+    Value: |String|
+    Default: >
+            {
+              'pizza hut'       : 'https://www.pizzahut.com',
+              'ph'              : 'https://www.pizzahut.com',
+              'papa johns'      : 'https://www.papajohns.com',
+              'pj'              : 'https://www.papajohns.com',
+            }
+<
+This specifies which pizzerias correspond to which URL.
+
+------------------------------------------------------------------------------
+vim:tw=78:ts=8:ft=help:noet:expandtab
