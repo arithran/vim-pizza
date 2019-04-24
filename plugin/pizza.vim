@@ -9,8 +9,10 @@ if exists("g:pizza#loaded")
 	finish
 endif
 
+let s:DEFAULT_PIZZA_URL = "https://www.pizzahut.com"
+
 if !exists('g:vim_pizza_url')
-	let g:vim_pizza_url = 'https://www.pizzahut.com'
+	let g:vim_pizza_url = s:DEFAULT_PIZZA_URL
 endif
 
 function! OrderPizza() abort
