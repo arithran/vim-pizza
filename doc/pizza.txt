@@ -1,4 +1,4 @@
-*pizza.txt*              For Vim version 8.1          Last change: 2019 April 23
+*pizza.txt*              For Vim version 8.1          Last change: 2019 April 24
 
 
                   _   _ _            ______ _                                  ~
@@ -50,8 +50,8 @@ By default, this is not bound to anything. If you are always hungry, add the
 following to your |vimrc| to bind a key like |F5|: >
 
         nnoremap <F5> :OrderPizza<CR>
-
-<With no arguments, a browser page with open at the URL specified by
+<
+With no arguments, a browser page with open at the URL specified by
 |g:pizza#default_pizzeria|. With arguments, you can specify which pizzeria you
 would like to order from, specifed by |g:pizza#pizzerias|. If an invalid
 pizzeria is specified, the default pizzeria will be used.
