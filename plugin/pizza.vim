@@ -2,6 +2,7 @@
 " vim-pizza: Order pizza from within Vim.
 "
 " Author:     Arithran Thurairetnam
+"             Evan Quan
 " Maintainer: https://github.com/arithran/vim-pizza
 " Version:    0.3.1
 " ============================================================================

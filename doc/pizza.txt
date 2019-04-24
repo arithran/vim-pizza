@@ -44,6 +44,9 @@ You can find the most updated version of the plugin from:
 ==============================================================================
 2. Usage                                                           *pizza-usage*
 
+|vim-pizza| provides a command that allows you to order pizza without leaving
+the comfort of your favorite text editor.
+
 ------------------------------------------------------------------------------
 2.1 Commands                                                    *pizza-commands*
 
@@ -57,7 +60,12 @@ following to your |vimrc| to bind a key like |F5|: >
 With no arguments, a browser page with open at the URL specified by
 |g:pizza#default_pizzeria|. With arguments, you can specify which pizzeria you
 would like to order from, specifed by |g:pizza#pizzerias|. If an invalid
-pizzeria is specified, the default pizzeria will be used.
+pizzeria is specified, the default pizzeria will be used. For example,
+executing: >
+
+        :OrderPizza papa johns
+<
+will order pizza from the `papa johns` URL specified in |g:pizza#pizzerias|.
 
 ------------------------------------------------------------------------------
 2.2 Variables                                                  *pizza-variables*
@@ -68,8 +76,8 @@ Type: |String|
 Default: `'pizza hut'`
 
 This specifies which pizzeria the |:OrderPizza| command should visit by
-default if no parameters are specified. For example, if you always order Papa
-John's Pan Cheese, add the following to your |vimrc|: >
+default if no parameters are specified. For example, if you always order
+`Papa John's Pan Cheese`, add the following to your |vimrc|: >
 
 
         let g:pizza#default_pizzeria = 'papa johns pan cheese'
