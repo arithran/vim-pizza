@@ -52,6 +52,9 @@ endif
 " @param[in] String     key      corresponding to the value to return
 " @param[in] String     default  value to return if key does not exist in the
 "                                specified map
+"
+" @return String the value or default
+"
 function! s:GetValueOrDefault(dict, key, default) abort
 	return has_key(a:dict, a:key) ? a:dict[a:key] : a:default
 endfunction
@@ -60,6 +63,7 @@ endfunction
 " Order pizza from the specified pizzeria
 "
 " @param[in] List<String> a:000    pizzeria name, with each element as a word
+"
 function! OrderPizza(...)
 	let s:pizzeria = s:GetValueOrDefault(g:pizza#pizzerias,
 	                                   \ join(a:000, " "),
@@ -70,6 +74,7 @@ endfunction
 " Open the specified URL in a browser window.
 "
 " @param[in] String url    specified to open
+"
 function! s:OpenURL(url) abort
 	let haskdeinit = system("ps -e") =~ 'kdeinit'
 	let hasdarwin = system("uname -s") =~ 'Darwin'
