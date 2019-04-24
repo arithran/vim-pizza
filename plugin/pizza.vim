@@ -3,30 +3,45 @@
 "
 " Author:     Arithran Thurairetnam
 " Maintainer: https://github.com/arithran/vim-pizza
-" Version:    0.3.0
+" Version:    0.3.1
 " ============================================================================
 if exists("g:pizza#loaded")
 	finish
 endif
 
 let s:DEFAULT_PIZZA_URL = "pizza hut"
-let s:INVALID_PIZZERIA = ""
 
 if !exists('g:pizza#default_pizzeria')
 	let g:pizza#default_pizzeria = s:DEFAULT_PIZZA_URL
 endif
 
+" In order to prevent the defaults from overriding user-specified values,
+" we only create the map if it doesn't exist and add default key:value pairs
+" if they are not already defined.
 if !exists('g:pizza#pizzerias')
-	let g:pizza#pizzerias = { 'pizza hut'  : 'https://www.pizzahut.com',
-	                        \ 'ph'         : 'https://www.pizzahut.com',
-	                        \ 'papa johns' : 'https://www.papajohns.com',
-	                        \ 'pj'         : 'https://www.papajohns.com',
-	                        \ 'papa johns pan cheese' : 'https://www.papajohns.com/
-	                                                   \ order/builder/productBuilderInfo?
-	                                                   \ productGroupId=pan-cheese&productSKU.sku
-	                                                   \ =1-296-3-83&quantity=1',
-	                        \ 'dominos'    : 'https://www.dominos.com',
-	                        \ }
+	let g:pizza#pizzerias = {}
+endif
+
+if !has_key(g:pizza#pizzerias, 'pizza hut')
+let g:pizza#pizzerias['pizza hut'] = s:DEFAULT_PIZZA_URL
+endif
+if !has_key(g:pizza#pizzerias, 'ph')
+let g:pizza#pizzerias['ph'] = s:DEFAULT_PIZZA_URL
+endif
+if !has_key(g:pizza#pizzerias, 'papa johns')
+let g:pizza#pizzerias['papa johns'] = 'https://www.papajohns.com'
+endif
+if !has_key(g:pizza#pizzerias, 'pj')
+let g:pizza#pizzerias['pj'] = 'https://www.papajohns.com'
+endif
+if !has_key(g:pizza#pizzerias, 'papa johns pan cheese')
+let g:pizza#pizzerias['papa johns pan cheese'] = 'https://www.papajohns.com/
+                                                \ order/builder/productBuilderInfo?
+                                                \ productGroupId=pan-cheese&productSKU.sku
+                                                \ =1-296-3-83&quantity=1'
+endif
+if !has_key(g:pizza#pizzerias, 'dominos')
+let g:pizza#pizzerias['dominos'] = 'https://www .dominos.com'
 endif
 
 " Attempt to get a key's corresponding value in a dictionary. If the key does
