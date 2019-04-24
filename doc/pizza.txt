@@ -46,13 +46,15 @@ You can find the most updated version of the plugin from:
 
 :OrderPizza [args]                                                 *:OrderPizza*
 
-With no arguments, a browser page with open at the URL specified by
-|g:pizza#default_pizzeria|. By default, this is not bound to anything. If you
-are always hungry, add the following to your |vimrc| to bind a key like |F5|:
->
+By default, this is not bound to anything. If you are always hungry, add the
+following to your |vimrc| to bind a key like |F5|: >
 
         nnoremap <F5> :OrderPizza<CR>
-<
+
+<With no arguments, a browser page with open at the URL specified by
+|g:pizza#default_pizzeria|. With arguments, you can specify which pizzeria you
+would like to order from, specifed by |g:pizza#pizzerias|. If an invalid
+pizzeria is specified, the default pizzeria will be used.
 
 ------------------------------------------------------------------------------
 2.2 Variables                                                  *pizza-variables*
@@ -88,7 +90,9 @@ Default: >
           'dominos'         : 'https://www.dominos.com',
         }
 <
-This specifies which pizzerias correspond to which URL.
+This specifies which pizzerias correspond to which URL. If the arguments
+provided to |:OrderPizza| match a given key, the corresponding URL will be
+opened in the browser. This is case-sensitive.
 
 LOADED                                                          *g:pizza#loaded*
 
