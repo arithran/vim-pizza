@@ -4,16 +4,14 @@
 " Author:     Arithran Thurairetnam
 "             Evan Quan
 " Maintainer: https://github.com/arithran/vim-pizza
-" Version:    0.3.1
+" Version:    0.4.0
 " ============================================================================
 if exists("g:pizza#loaded")
 	finish
 endif
 
-let s:DEFAULT_PIZZA_URL = "pizza hut"
-
 if !exists('g:pizza#default_pizzeria')
-	let g:pizza#default_pizzeria = s:DEFAULT_PIZZA_URL
+	let g:pizza#default_pizzeria = 'pizza hut'
 endif
 
 " In order to prevent the defaults from overriding user-specified values,
@@ -24,10 +22,10 @@ if !exists('g:pizza#pizzerias')
 endif
 
 if !has_key(g:pizza#pizzerias, 'pizza hut')
-let g:pizza#pizzerias['pizza hut'] = s:DEFAULT_PIZZA_URL
+let g:pizza#pizzerias['pizza hut'] = 'https://www.pizzahut.com'
 endif
 if !has_key(g:pizza#pizzerias, 'ph')
-let g:pizza#pizzerias['ph'] = s:DEFAULT_PIZZA_URL
+let g:pizza#pizzerias['ph'] = 'https://www.pizzahut.com'
 endif
 if !has_key(g:pizza#pizzerias, 'papa johns')
 let g:pizza#pizzerias['papa johns'] = 'https://www.papajohns.com'
@@ -68,7 +66,15 @@ function! OrderPizza(...)
 	let s:pizzeria = s:GetValueOrDefault(g:pizza#pizzerias,
 	                                   \ join(a:000, " "),
 	                                   \ g:pizza#pizzerias[g:pizza#default_pizzeria])
-	call s:OpenURL(s:pizzeria)
+
+	" Prioritize Python implementation if supported
+	if has('python3')
+		call s:OpenURLPython3(s:pizzeria)
+	elseif has('python')
+		call s:OpenURLPython2(s:pizzeria)
+	else
+		call s:OpenURL(s:pizzeria)
+	endif
 endfunction
 
 " Open the specified URL in a browser window.
@@ -98,6 +104,34 @@ function! s:OpenURL(url) abort
 		exe "silent !start explorer ".shellescape(a:url,1)
 	end
 	redraw!
+endfunction
+
+" Open the specified URL in a browser window with Python 3.
+"
+" @param[in] String url    specified to open
+"
+function! s:OpenURLPython3(url)
+	let g:pizza#python_pizzeria = a:url
+python3 << endpy
+import vim
+import webbrowser
+s = vim.eval('g:pizza#python_pizzeria')
+webbrowser.open(s, new=0, autoraise=True)
+endpy
+endfunction
+
+" Open the specified URL in a browser window with Python 2.
+"
+" @param[in] String url    specified to open
+"
+function! s:OpenURLPython2(url)
+	let g:pizza#python_pizzeria = a:url
+python << endpy
+import vim
+import webbrowser
+s = vim.eval('g:pizza#python_pizzeria')
+webbrowser.open(s, new=0, autoraise=True)
+endpy
 endfunction
 
 command! -nargs=* OrderPizza call OrderPizza(<q-args>)
