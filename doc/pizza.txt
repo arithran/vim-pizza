@@ -1,4 +1,4 @@
-*pizza.txt*              For Vim version 8.1          Last change: 2019 April 24
+*pizza.txt*              For Vim version 8.1          Last change: 2019 April 26
 
 
                   _   _ _            ______ _                                  ~
@@ -111,6 +111,15 @@ Type: |Number|
 Default: `1`
 
 If the variable exists, then the plugin loaded successfully.
+
+PYTHON PIZZERIA                                        *g:pizza#python_pizzeria*
+
+Type: |String|
+Default: `N/A`
+
+This specifies which pizzeria should be used for the Python 2 and Python
+3 implementations. This value does not need to be altered by the user, nor
+will any problems arise if the user does alter it.
 
 ------------------------------------------------------------------------------
 vim:tw=78:ts=8:ft=help:noet:expandtab
