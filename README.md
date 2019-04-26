@@ -37,7 +37,8 @@ Plugin Manager  | Install with...
 [NeoBundle][12] | `NeoBundle 'arithran/vim-pizza'`
 [Vundle][13]    | `Plugin 'arithran/vim-pizza'`
 [Plug][40]      | `Plug 'arithran/vim-pizza'`
-manual          | copy all of the files into your `~/.vim` directory
+[Pathogen][14]  | `git clone https://github.com/arithran/vim-pizza ~/.vim/bundle`
+Manual          | Copy all of the files into your `~/.vim` directory
 
 ## License
 Licensed under the [MIT License](LICENSE.txt).
@@ -49,3 +50,4 @@ party APIs in the near future. Help is appreciated, PM me.
 [12]: https://github.com/Shougo/neobundle.vim
 [13]: https://github.com/gmarik/vundle
 [40]: https://github.com/junegunn/vim-plug
+[14]: https://github.com/tpope/vim-pathogen
