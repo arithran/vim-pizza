@@ -11,17 +11,19 @@ Also, you can brag about Vim ordering pizza at work (the real reason for
 developing this plug-in).
 
 ## Usage
-	:OrderPizza
-
+```vim
+:OrderPizza
+```
 **If you are always hungry, add the following to your .vimrc to bind a key
 like F5**
-
-	nnoremap <F5> :OrderPizza<CR>
-
+```vim
+nnoremap <F5> :OrderPizza<CR>
+```
 **I always order Papa John's Pan Cheese, but this plug-in always takes me to
 the Pizza Hut homepage** (It can be any pizza URL you visit frequently)
-
-	let g:pizza#default_pizzeria ='https://www.papajohns.com/order/builder/productBuilderInfo?productGroupId=pan-cheese&productSKU.sku=1-296-3-83&quantity=1'
+```vim
+let g:pizza#default_pizzeria ='https://www.papajohns.com/order/builder/productBuilderInfo?productGroupId=pan-cheese&productSKU.sku=1-296-3-83&quantity=1'
+```
 
 Checkout `:help pizza` for more information.
 
