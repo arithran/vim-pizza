@@ -1,0 +1,125 @@
+*pizza.txt*              For Vim version 8.1          Last change: 2019 April 26
+
+
+                  _   _ _            ______ _                                  ~
+                 | | | (_)           | ___ (_)                                 ~
+                 | | | |_ _ __ ___   | |_/ /_ __________ _                     ~
+                 | | | | | '_ ` _ \  |  __/| |_  /_  / _` |                    ~
+                 \ \_/ / | | | | | | | |   | |/ / / / (_| |                    ~
+                  \___/|_|_| |_| |_| \_|   |_/___/___\__,_|                    ~
+ ____                                                                          ~
+/    \                 Order pizza from within Vim.                            ~
+  u  u|      _______                                                           ~
+    \ |  .-''#%&#&%#``-.                                                       ~
+   = /  ((%&#&#&%&#%&%&))                                                      ~
+    |    `-._#%&##&%_.-'                                                       ~
+ /\/\`--.   `-."".-'         Reference Manual                                  ~
+ |  |    \   /`./                                                              ~
+ |\/|  \  `-'  /                                                               ~
+ || |   \     /                                                                ~
+==============================================================================
+CONTENTS                                                        *pizza-contents*
+
+    1. Introduction.............................|pizza-introduction|
+    2. Usage....................................|pizza-usage|
+        2.1 Commands............................|pizza-commands|
+        2.2 Variables...........................|pizza-variables|
+
+==============================================================================
+1. Introduction                                             *pizza-introduction*
+
+After a long day's work of coding, you feel exhausted and all you want to do
+is eat pizza. But since you are a Vim user you wish that you had a key-binding
+within Vim to open your computer browser, point it at your favourite pizza and
+make an order.
+
+Also, you can brag about Vim ordering pizza at work (the real reason for
+developing this plug-in).
+
+You can find the most updated version of the plugin from:
+
+        https://github.com/arithran/vim-pizza
+
+
+==============================================================================
+2. Usage                                                           *pizza-usage*
+
+|vim-pizza| provides a command that allows you to order pizza without leaving
+the comfort of your favorite text editor.
+
+------------------------------------------------------------------------------
+2.1 Commands                                                    *pizza-commands*
+
+:OrderPizza [args]                                                 *:OrderPizza*
+
+By default, this is not bound to anything. If you are always hungry, add the
+following to your |vimrc| to bind a key like |F5|: >
+
+        nnoremap <F5> :OrderPizza<CR>
+<
+With no arguments, a browser page with open at the URL specified by
+|g:pizza#default_pizzeria|. With arguments, you can specify which pizzeria you
+would like to order from, specifed by |g:pizza#pizzerias|. If an invalid
+pizzeria is specified, the default pizzeria will be used. For example,
+executing: >
+
+        :OrderPizza papa johns
+<
+will order pizza from the `papa johns` URL specified in |g:pizza#pizzerias|.
+
+------------------------------------------------------------------------------
+2.2 Variables                                                  *pizza-variables*
+
+DEFAULT PIZZERIA                                      *g:pizza#default_pizzeria*
+
+Type: |String|
+Default: `'pizza hut'`
+
+This specifies which pizzeria the |:OrderPizza| command should visit by
+default if no parameters are specified. For example, if you always order
+`Papa John's Pan Cheese`, add the following to your |vimrc|: >
+
+
+        let g:pizza#default_pizzeria = 'papa johns pan cheese'
+<
+
+PIZZERIAS                                                    *g:pizza#pizzerias*
+
+Type:  |Dictionary|
+Key:   |String|
+Value: |String|
+Default: >
+        {
+          'pizza hut'       : 'https://www.pizzahut.com',
+          'ph'              : 'https://www.pizzahut.com',
+          'papa johns'      : 'https://www.papajohns.com',
+          'pj'              : 'https://www.papajohns.com',
+          'papa johns pan cheese' : 'https://www.papajohns.com/
+                                   \ order/builder/productBuilderInfo?
+                                   \ productGroupId=pan-cheese&productSKU.sku
+                                   \ =1-296-3-83&quantity=1',
+          'dominos'         : 'https://www.dominos.com',
+        }
+<
+This specifies which pizzerias correspond to which URL. If the arguments
+provided to |:OrderPizza| match a given key, the corresponding URL will be
+opened in the browser. This is case-sensitive.
+
+LOADED                                                          *g:pizza#loaded*
+
+Type: |Number|
+Default: `1`
+
+If the variable exists, then the plugin loaded successfully.
+
+PYTHON PIZZERIA                                        *g:pizza#python_pizzeria*
+
+Type: |String|
+Default: `N/A`
+
+This specifies which pizzeria should be used for the Python 2 and Python
+3 implementations. This value does not need to be altered by the user, nor
+will any problems arise if the user does alter it.
+
+------------------------------------------------------------------------------
+vim:tw=78:ts=8:ft=help:noet:expandtab
