@@ -40,7 +40,7 @@ let g:pizza#pizzerias['papa johns pan cheese'] = 'https://www.papajohns.com/
                                                 \ =1-296-3-83&quantity=1'
 endif
 if !has_key(g:pizza#pizzerias, 'dominos')
-let g:pizza#pizzerias['dominos'] = 'https://www .dominos.com'
+let g:pizza#pizzerias['dominos'] = 'https://www.dominos.com'
 endif
 
 " Attempt to get a key's corresponding value in a dictionary. If the key does
